@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "391149213528",
+    "firebase_url": "https://ammis-kitchen.firebaseio.com",
+    "project_id": "ammis-kitchen",
+    "storage_bucket": "ammis-kitchen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391149213528:android:3339d4f5401f0d169bf72d",
+        "android_client_info": {
+          "package_name": "com.ammiskitchen.ammiskitchenapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "391149213528-lvkblmkth31akmvrlg3s6q2io5s0c7j8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ammiskitchen.ammiskitchenapp",
+            "certificate_hash": "69a2c3ad02f70de53d4fe056fe8120c90aaebbb1"
+          }
+        },
+        {
+          "client_id": "391149213528-kv8d2jl0i4c5dg85k7qfbrjees53d4gg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPNC6wCptp167p2KMa4OXjmaUbVr2cPLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "391149213528-kv8d2jl0i4c5dg85k7qfbrjees53d4gg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

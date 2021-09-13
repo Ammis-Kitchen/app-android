@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Ammis Kitchen</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home">HOME</string>
+    <string name="menu">MENU</string>
+    <string name="cart">CART</string>
+    <string name="account">ACCOUNT</string>
+    <string name="hintEmail">Email</string>
+    <string name="hintFirstName">First Name</string>
+    <string name="hintLastName">Last Name</string>
+    <string name="btnContinue">Continue</string>
+    <string name="hintMobileNumber">Mobile Number</string>
+    <string name="txtSendOTP">Send OTP</string>
+    <string name="txtSubmitOTP">Submit</string>
+    <string name="hintOTP">Enter OTP</string>
+    <string name="hintAddress">Enter Primary Address</string>
+    <string name="logoContentDescription">Ammis Kitchen</string>
+    <string name="skip">skip for now ></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

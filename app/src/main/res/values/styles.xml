@@ -1,0 +1,37 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="bottomSheetDialogTheme">@style/bottomSheetDialog_rounded</item>
+        
+    </style>
+    
+    <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+    
+    <style name="bottomSheetDialog_rounded" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/bottomSheet_rounded</item>
+    </style>
+
+    <style name="bottomSheet_rounded" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/shapeAppearanceBottomSheetDialog_rounded</item>
+    </style>
+
+    <style name="shapeAppearanceBottomSheetDialog_rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="roundedCornersRecyclerView" parent="">
+        <item name="cornerSize">10%</item>
+    </style>
+
+</resources>
