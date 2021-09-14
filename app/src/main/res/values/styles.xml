@@ -24,6 +24,7 @@
 
     <style name="text_bold_style">
         <item name="fontFamily">@font/comfortaa_bold</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="text_regular_style">
@@ -33,6 +34,9 @@
     <style name="text_light_style">
         <item name="fontFamily">@font/comfortaa_light</item>
     </style>
+
+    <style name="Theme.AmmisKitchen.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.AmmisKitchen.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="shapeAppearanceBottomSheetDialog_rounded" parent="">
         <item name="cornerFamily">rounded</item>
