@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.ammiskitchen.ammiskitchenapp.R
 import com.ammiskitchen.ammiskitchenapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,10 +25,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
         val navController = findNavController(R.id.main_host_fragment)
+
+        setupActionBarWithNavController(navController)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.main_host_fragment)
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

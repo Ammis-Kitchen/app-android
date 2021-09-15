@@ -21,6 +21,7 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        context?.theme?.applyStyle(R.style.AppTheme, true)
         _binding = FragmentLoginBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -28,8 +29,7 @@ class LoginFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-
-        binding.buttonTP.setOnClickListener {
+        binding.buttonContinue.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_mobileVerificationFragment)
         }
     }

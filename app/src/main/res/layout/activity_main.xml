@@ -21,16 +21,6 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             app:popupTheme="@style/Theme.AmmisKitchen.PopupOverlay">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/toolbar_title"
-                android:text="Ammi's Kitchen"
-                android:textColor="@color/colorBlack"
-                android:fontFamily="@font/comfortaa_bold"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:gravity="center" />
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>

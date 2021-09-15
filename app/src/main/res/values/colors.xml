@@ -8,8 +8,11 @@
     <color name="colorPrimary">#FFD70B</color>
     <color name="colorPrimaryDark">#FFD70B</color>
     <color name="colorAccent">#FFE500</color>
+    <color name="edittextBorder">#A39200</color>
     <color name="backgroundColor">#F5F7F9</color>
     <color name="cardBackgroundColor">#FEFDFD</color>
+
+    <color name="otpboxColor">#F6F5FA</color>
 
     <color name="colorWhite">#ffffff</color>
     <color name="colorBlack">#000000</color>
@@ -17,4 +20,6 @@
     <color name="bottomNavBackgroundColor">#17171F</color>
     <color name="selectedBottomNavColor">#B6AC4D</color>
     <color name="unselectedBottomNavColor">#AFB4AB</color>
+
+    <color name="textColorGrey">#3C3939</color>
 </resources>

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.ammiskitchen.ammiskitchenapp.presentation.ui.auth.LoginFragment"
-        android:label="fragment_login"
+        android:label="Login"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_mobileVerificationFragment"
@@ -21,7 +21,7 @@
     <fragment
         android:id="@+id/mobileVerificationFragment"
         android:name="com.ammiskitchen.ammiskitchenapp.presentation.ui.auth.MobileVerificationFragment"
-        android:label="fragment_mobile_verification"
+        android:label="Verify Phone"
         tools:layout="@layout/fragment_mobile_verification" >
         <action
             android:id="@+id/action_mobileVerificationFragment_to_mainFeedFragment"
@@ -34,7 +34,8 @@
             app:enterAnim="@anim/from_left"
             app:exitAnim="@anim/to_right"
             app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="true"
+            app:launchSingleTop="false"/>
     </fragment>
     <fragment
         android:id="@+id/mainFeedFragment"

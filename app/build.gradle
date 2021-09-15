@@ -92,4 +92,7 @@ dependencies {
     //coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    //otpview
+    implementation "com.github.aabhasr1:OtpView:$otp_version"
 }

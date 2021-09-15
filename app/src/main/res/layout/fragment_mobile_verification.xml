@@ -1,14 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHeaderBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mobile Verification"
-        tools:ignore="MissingConstraints" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHeaderLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHeaderRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineDescriptionLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineDescriptionRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineDescriptionBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineOtpTextBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.30" />
+
+    <TextView
+        android:id="@+id/textVerify"
+        style="@style/text_regular_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Verify Phone"
+        android:textAlignment="center"
+        android:textColor="@color/textColorGrey"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHeaderBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineHeaderRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineHeaderLeft"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_description"
+        style="@style/text_regular_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Code is sent to +919987746997"
+        android:textAlignment="center"
+        android:textColor="@color/textColorGrey"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineDescriptionBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDescriptionRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineDescriptionLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHeaderBottom" />
+
+    <in.aabhasjindal.otptextview.OtpTextView
+        android:id="@+id/otp_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:bar_enabled="false"
+        app:bar_height="2dp"
+        app:height="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineOtpTextBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineHeaderRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineHeaderLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineDescriptionBottom"
+        app:length="6"
+        app:otp="123456"
+        app:otp_box_background="@color/otpboxColor"
+        app:otp_text_size="18sp"
+        app:width="40dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineResentBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".40" />
+
+    <TextView
+        android:id="@+id/text_resend_code"
+        style="@style/text_regular_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Didn't receive code? Request again"
+        android:textAlignment="center"
+        android:textColor="@color/grey"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineResentBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDescriptionRight"
+        app:layout_constraintStart_toStartOf="@+id/guidelineDescriptionLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineOtpTextBottom" />
+
+    <Button
+        android:id="@+id/button_verify"
+        style="@style/button_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Verify and Login"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonRight"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineResentBottom" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtonLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtonRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
 </androidx.constraintlayout.widget.ConstraintLayout>
