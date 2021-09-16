@@ -42,6 +42,6 @@
     <fragment
         android:id="@+id/mainFeedFragment"
         android:name="com.ammiskitchen.ammiskitchenapp.presentation.ui.mainfeed.MainFeedFragment"
-        android:label="fragment_main_feed"
+        android:label="Ammi's Kitchen"
         tools:layout="@layout/fragment_main_feed" />
 </navigation>

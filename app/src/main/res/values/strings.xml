@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Ammis Kitchen</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="home">HOME</string>
-    <string name="menu">MENU</string>
-    <string name="cart">CART</string>
+    <string name="menu">Menu</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
     <string name="account">ACCOUNT</string>
     <string name="hintEmail">Email</string>
     <string name="hintFirstName">First Name</string>
