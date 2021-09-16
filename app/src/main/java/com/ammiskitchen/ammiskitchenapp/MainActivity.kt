@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.ammiskitchen.ammiskitchenapp.R
 import com.ammiskitchen.ammiskitchenapp.databinding.ActivityMainBinding
@@ -29,14 +30,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
-//        val window: Window = this.window
-//        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-//        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-//        window.statusBarColor = ContextCompat.getColor(this ,R.color.black)
-
         val navController = findNavController(R.id.main_host_fragment)
-
-        setupActionBarWithNavController(navController)
+        val appBarConfiguration = AppBarConfiguration
+            .Builder(R.id.mainFeedFragment, R.id.loginFragment)
+            .build()
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
     override fun onDestroy() {
