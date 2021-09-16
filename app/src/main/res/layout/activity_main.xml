@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
+            android:theme="@style/ToolbarStyle"
             app:popupTheme="@style/Theme.AmmisKitchen.PopupOverlay">
         </androidx.appcompat.widget.Toolbar>
 

@@ -8,9 +8,15 @@
         <item name="colorControlNormal">@color/edittextBorder</item>
         <item name="colorControlActivated">@color/edittextBorder</item>
         <item name="colorControlHighlight">@color/edittextBorder</item>
+    </style>
 
-        <item name="bottomSheetDialogTheme">@style/bottomSheetDialog_rounded</item>
-        
+    <style name="ToolbarStyle" parent="Theme.MaterialComponents">
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/black</item>
+        <item name="actionMenuTextColor">@color/black</item>
+        <item name="fontFamily">@font/comfortaa_regular</item>
+        <item name="android:textStyle">bold</item>
+
     </style>
     
     <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
