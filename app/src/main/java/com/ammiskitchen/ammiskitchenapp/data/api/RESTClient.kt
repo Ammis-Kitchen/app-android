@@ -2,6 +2,7 @@ package com.ammiskitchen.ammiskitchenapp.data.api
 
 import com.ammiskitchen.ammiskitchenapp.BuildConfig
 import com.ammiskitchen.ammiskitchenapp.data.api.service.AuthService
+import com.ammiskitchen.ammiskitchenapp.data.api.service.MenuService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -20,4 +21,9 @@ object RESTClient {
         .client(okHttpBuilder.build())
         .build()
         .create(AuthService::class.java)
+
+    val menuService: MenuService = retrofitBuilder
+        .client(okHttpBuilder.build())
+        .build()
+        .create(MenuService::class.java)
 }
