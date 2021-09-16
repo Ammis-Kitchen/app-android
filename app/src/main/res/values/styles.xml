@@ -74,5 +74,9 @@
         <item name="android:paddingBottom">8dp</item>
         <item name="textAllCaps">false</item>
     </style>
+    
+    <style name="BottomNavigationStyle">
+        <item name="fontFamily">@font/comfortaa_regular</item>
+    </style>
 
 </resources>
