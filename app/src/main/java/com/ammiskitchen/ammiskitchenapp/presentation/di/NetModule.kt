@@ -2,6 +2,7 @@ package com.ammiskitchen.ammiskitchenapp.presentation.di
 
 import com.ammiskitchen.ammiskitchenapp.data.api.RESTClient
 import com.ammiskitchen.ammiskitchenapp.data.api.service.AuthService
+import com.ammiskitchen.ammiskitchenapp.data.api.service.MenuService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,5 +16,11 @@ class NetModule {
     @Provides
     fun provideAuthService(): AuthService {
         return RESTClient.authService
+    }
+
+    @Singleton
+    @Provides
+    fun provideMenuService(): MenuService {
+        return RESTClient.menuService
     }
 }

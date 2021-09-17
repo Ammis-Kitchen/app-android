@@ -9,8 +9,14 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.ammiskitchen.ammiskitchenapp.R
 import com.ammiskitchen.ammiskitchenapp.databinding.FragmentLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
+
+    @Inject
+    lateinit var loginViewModelFactory: LoginViewModelFactory
 
     private lateinit var viewModel: LoginViewModel
 
@@ -28,7 +34,7 @@ class LoginFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        viewModel = ViewModelProvider(this, loginViewModelFactory).get(LoginViewModel::class.java)
         binding.buttonContinue.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_mobileVerificationFragment)
         }
