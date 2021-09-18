@@ -1,18 +1,18 @@
 package com.ammiskitchen.ammiskitchenapp.presentation.ui.mainfeed.menu
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ammiskitchen.ammiskitchenapp.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.ammiskitchen.ammiskitchenapp.data.util.Resource
 import com.ammiskitchen.ammiskitchenapp.databinding.FragmentMenuBinding
 import com.ammiskitchen.ammiskitchenapp.presentation.ui.mainfeed.menu.adapter.CuisinesListAdapter
 import com.ammiskitchen.ammiskitchenapp.presentation.ui.mainfeed.menu.adapter.SubCuisinesListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class MenuFragment : Fragment() {
@@ -33,6 +33,8 @@ class MenuFragment : Fragment() {
 
     var subCuisine: String = ""
     var mainCuisine: String = ""
+
+    var cuisinesList = listOf("Chinese", "Italian", "Indian", "Punjabi")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
