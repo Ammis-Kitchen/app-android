@@ -84,6 +84,17 @@ class MenuFragment : Fragment() {
             }
         }
 
+        cuisinesListAdapter.setOnCuisineClickListener {
+            println("Debug: ${it}")
+            mainCuisine = it
+            getSubCuisines(mainCuisine)
+        }
+
+        subCuisinesListAdapter.setOnSubCuisineClickListener {
+            println("Debug: ${it}")
+            subCuisine = it
+        }
+
     }
 
     private fun initRecyclerView() {

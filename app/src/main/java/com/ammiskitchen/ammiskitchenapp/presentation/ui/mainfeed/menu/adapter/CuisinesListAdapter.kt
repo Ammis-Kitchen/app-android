@@ -9,12 +9,20 @@ import com.ammiskitchen.ammiskitchenapp.databinding.ListCuisinesBinding
 
 class CuisinesListAdapter: ListAdapter<String, CuisinesListAdapter.CuisinesListViewHolder>(CuisineDiffUtilCallback) {
 
+    private var onCuisineClickListener: ((String) -> Unit) ?= null
+
     inner class CuisinesListViewHolder(
         val binding: ListCuisinesBinding
     ): RecyclerView.ViewHolder(binding.root) {
         fun bind(cuisine: String) {
             binding.apply {
                 buttonCategory.text = cuisine
+
+                buttonCategory.setOnClickListener {
+                    onCuisineClickListener?.let {
+                        it(cuisine)
+                    }
+                }
             }
         }
     }
@@ -29,6 +37,10 @@ class CuisinesListAdapter: ListAdapter<String, CuisinesListAdapter.CuisinesListV
         getItem(position)?.let {
             holder.bind(it)
         }
+    }
+
+    fun setOnCuisineClickListener(listener: (String) -> Unit) {
+        onCuisineClickListener = listener
     }
 }
 
