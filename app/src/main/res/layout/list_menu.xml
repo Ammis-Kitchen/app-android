@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="16dp"
+    android:elevation="10dp"
+    android:layout_margin="8dp"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_menu"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_cuisine"
+            android:layout_width="0dp"
+            android:layout_height="192dp"
+            android:fitsSystemWindows="true"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="@id/layout_menu"
+            app:layout_constraintStart_toStartOf="@id/layout_menu"
+            app:layout_constraintTop_toTopOf="@id/layout_menu"
+            app:srcCompat="@drawable/biryani" />
+
+        <TextView
+            android:id="@+id/text_cuisinename"
+            style="@style/text_regular_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Mughlai Biryani"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="8dp"
+            app:layout_constraintEnd_toEndOf="@id/layout_menu"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/layout_menu"
+            app:layout_constraintTop_toBottomOf="@+id/image_cuisine" />
+
+        <TextView
+            android:id="@+id/text_cuisinecategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa_regular"
+            android:text="Indian, Rice Food"
+            android:textColor="@color/textColorGrey"
+            android:textSize="12sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="8dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_cuisinename" />
+
+        <TextView
+            android:id="@+id/text_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa_regular"
+            android:text="₹100 for one"
+            android:textColor="@color/textColorGrey"
+            android:textSize="12sp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginHorizontal="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_cuisinename" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

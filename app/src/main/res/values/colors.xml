@@ -11,6 +11,7 @@
     <color name="edittextBorder">#A39200</color>
     <color name="backgroundColor">#F5F7F9</color>
     <color name="cardBackgroundColor">#FEFDFD</color>
+    <color name="transparentWhite">#00FFFFFF</color>
 
     <color name="otpboxColor">#F6F5FA</color>
 
