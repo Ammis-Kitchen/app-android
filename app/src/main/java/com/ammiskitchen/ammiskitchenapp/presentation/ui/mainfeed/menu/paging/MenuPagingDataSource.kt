@@ -1,6 +1,5 @@
 package com.ammiskitchen.ammiskitchenapp.presentation.ui.mainfeed.menu.paging
 
-import androidx.paging.ExperimentalPagingApi
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.ammiskitchen.ammiskitchenapp.data.exception.NotFoundException
@@ -49,8 +48,7 @@ class MenuPagingDataSource(
         }
     }
 
-    @ExperimentalPagingApi
     override fun getRefreshKey(state: PagingState<Int, MenuList>): Int? {
-        return super.getRefreshKey(state)
+        TODO("Not yet implemented")
     }
 }
