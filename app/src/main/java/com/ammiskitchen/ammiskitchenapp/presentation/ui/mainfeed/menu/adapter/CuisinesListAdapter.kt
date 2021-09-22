@@ -16,7 +16,7 @@ class CuisinesListAdapter: ListAdapter<String, CuisinesListAdapter.CuisinesListV
     ): RecyclerView.ViewHolder(binding.root) {
         fun bind(cuisine: String) {
             binding.apply {
-                buttonCategory.text = cuisine
+                buttonCategory.text = cuisine.capitalize()
 
                 buttonCategory.setOnClickListener {
                     onCuisineClickListener?.let {

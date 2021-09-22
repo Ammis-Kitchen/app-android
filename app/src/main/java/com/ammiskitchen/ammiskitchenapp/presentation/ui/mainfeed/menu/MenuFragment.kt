@@ -6,11 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ammiskitchen.ammiskitchenapp.data.util.Resource
 import com.ammiskitchen.ammiskitchenapp.databinding.FragmentMenuBinding
+import com.ammiskitchen.ammiskitchenapp.domain.usecase.menu.GetMenuUseCase
 import com.ammiskitchen.ammiskitchenapp.presentation.ui.mainfeed.menu.adapter.CuisinesListAdapter
+import com.ammiskitchen.ammiskitchenapp.presentation.ui.mainfeed.menu.adapter.MenuListAdapter
+import com.ammiskitchen.ammiskitchenapp.presentation.ui.mainfeed.menu.adapter.MenuLoadStateAdapter
 import com.ammiskitchen.ammiskitchenapp.presentation.ui.mainfeed.menu.adapter.SubCuisinesListAdapter
+import com.ammiskitchen.ammiskitchenapp.presentation.ui.mainfeed.menu.paging.MenuPagingRepository
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
@@ -26,6 +34,15 @@ class MenuFragment : Fragment() {
     @Inject
     lateinit var subCuisinesListAdapter: SubCuisinesListAdapter
 
+    @Inject
+    lateinit var getMenuUseCase: GetMenuUseCase
+
+    @Inject
+    lateinit var menuListAdapter: MenuListAdapter
+
+    @Inject
+    lateinit var menuLoadStateAdapter: MenuLoadStateAdapter
+
     private lateinit var viewModel: MenuViewModel
 
     private var _binding: FragmentMenuBinding? = null
@@ -35,6 +52,8 @@ class MenuFragment : Fragment() {
     var mainCuisine: String = ""
 
     var cuisinesList = listOf("Chinese", "Italian", "Indian", "Punjabi")
+
+    private lateinit var menuPagingRepository: MenuPagingRepository
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,7 +67,6 @@ class MenuFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this, menuViewModelFactory).get(MenuViewModel::class.java)
         initRecyclerView()
-
         viewModel.responseCuisines.observe({ lifecycle }) {
             when(it) {
                 is Resource.Success -> {
@@ -73,6 +91,8 @@ class MenuFragment : Fragment() {
                     it.data?.let { responseCuisines ->
                         subCuisinesListAdapter.submitList(responseCuisines.subcategory)
                         subCuisine = responseCuisines.subcategory[0]
+
+                        setPagingRepository()
                     }
                 }
                 is Resource.Error -> {
@@ -93,6 +113,7 @@ class MenuFragment : Fragment() {
         subCuisinesListAdapter.setOnSubCuisineClickListener {
             println("Debug: ${it}")
             subCuisine = it
+            setPagingRepository()
         }
 
     }
@@ -106,7 +127,30 @@ class MenuFragment : Fragment() {
             adapter = subCuisinesListAdapter
             subCuisinesListAdapter.notifyDataSetChanged()
         }
+
+        binding.recyclerviewMenu.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = menuListAdapter.withLoadStateFooter(
+                footer = menuLoadStateAdapter
+            )
+        }
         getCuisines()
+    }
+
+    private fun setPagingRepository() {
+        menuPagingRepository = MenuPagingRepository(getMenuUseCase, "italian", "main")
+        viewModel.setPagingRepository(menuPagingRepository)
+        getMenuList()
+    }
+
+    private fun getMenuList() {
+        lifecycleScope.launch {
+            viewModel.getMenu(mainCuisine, subCuisine).collect {
+                it.let { data ->
+                    menuListAdapter.submitData(data)
+                }
+            }
+        }
     }
 
     private fun getCuisines() {

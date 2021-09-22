@@ -9,12 +9,17 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
+import com.ammiskitchen.ammiskitchenapp.data.models.entities.MenuList
 import com.ammiskitchen.ammiskitchenapp.data.models.response.ResponseCuisines
 import com.ammiskitchen.ammiskitchenapp.data.models.response.ResponseSubCategory
 import com.ammiskitchen.ammiskitchenapp.data.util.Resource
 import com.ammiskitchen.ammiskitchenapp.domain.usecase.menu.GetCuisinesUseCase
 import com.ammiskitchen.ammiskitchenapp.domain.usecase.menu.GetMenuUseCase
 import com.ammiskitchen.ammiskitchenapp.domain.usecase.menu.GetSubCuisinesUseCase
+import com.ammiskitchen.ammiskitchenapp.presentation.ui.mainfeed.menu.paging.MenuPagingRepository
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
@@ -30,6 +35,10 @@ class MenuViewModel(
 
     private var _responseSubCuisines = MutableLiveData<Resource<ResponseSubCategory>>()
     val responseSubCuisines get() = _responseSubCuisines
+
+    private var pagingRepository: MenuPagingRepository? = null
+
+    private var menuFeedResult: Flow<PagingData<MenuList>>? = null
 
     // Internet availability code
     private fun isNetworkAvailable(context: Context?):Boolean{
@@ -74,6 +83,21 @@ class MenuViewModel(
                 _responseCuisines.postValue(Resource.Error(e.message.toString()))
             }
         }
+    }
+
+    fun setPagingRepository(thisPagingRepository: MenuPagingRepository) {
+        pagingRepository = thisPagingRepository
+    }
+
+    fun getMenu(cuisine: String, subCuisine: String): Flow<PagingData<MenuList>> {
+        val lastResult = menuFeedResult
+        if (lastResult != null) {
+            return lastResult
+        }
+
+        val newResult: Flow<PagingData<MenuList>> = pagingRepository!!.getMenuList().cachedIn(viewModelScope)
+        menuFeedResult = newResult
+        return newResult
     }
 
     fun getSubCuisinesList(cuisine: String) {

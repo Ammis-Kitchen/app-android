@@ -99,4 +99,7 @@ dependencies {
     // Paging
     implementation "androidx.paging:paging-runtime:$paging_version"
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+
+    //Chips
+    implementation 'com.beloo.widget:ChipsLayoutManager:0.3.7@aar'
 }
