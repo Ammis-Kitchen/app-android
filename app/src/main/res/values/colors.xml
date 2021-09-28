@@ -21,6 +21,8 @@
     <color name="bottomNavBackgroundColor">#17171F</color>
     <color name="selectedBottomNavColor">#B6AC4D</color>
     <color name="unselectedBottomNavColor">#AFB4AB</color>
+    
+    <color name="chipColor">#E6AA43</color>
 
     <color name="textColorGrey">#3C3939</color>
 

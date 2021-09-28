@@ -102,4 +102,7 @@ dependencies {
 
     //Chips
     implementation 'com.beloo.widget:ChipsLayoutManager:0.3.7@aar'
+
+    //material chips
+    implementation("com.robertlevonyan.view:MaterialChipView:2.2.7")
 }
